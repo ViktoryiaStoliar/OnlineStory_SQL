@@ -44,12 +44,20 @@
 //     methodOfPayment varchar(30) not null
 // );
  
-// create table order (
+// create table orders (
+// 	orders_id INT PRIMARY KEY AUTO_INCREMENT,
 // 	категория_товаров_product_category VARCHAR(50) NOT NULL,
 //     products_product_name VARCHAR(20) NOT NULL,
 // 	products_price FLOAT NOT NULL,
 //     products_amount INT NOT NULL,
 //     deliveryTime datetime not null,
 //     payment_methodOfPayment varchar(30) not null,
-//     producer_title VARCHAR(20) NOT NULL
-// );}
+//     producer_title VARCHAR(20) NOT NULL,
+    
+//     foreign key (категория_товаров_product_category) references категория_товаров (product_category) on delete cascade,
+//     foreign key (products_product_name) references products (product_name) on delete cascade,
+//     foreign key (products_price) references products (product_price) on delete cascade,
+//     foreign key (products_amount) references products (product_amount) on delete cascade,
+//     foreign key (payment_methodOfPayment) references payment (methodOfPayment) on delete cascade,
+//     foreign key (producer_title) references producer (title) on delete cascade
+// );
